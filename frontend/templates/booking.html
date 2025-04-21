@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a Session - ManageStudio</title>
+    <link rel="icon" type="image/png" href="../static/images/favicon.jpg" />
+    <link rel="stylesheet" href="../static/css/style.css" />
+    <link rel="stylesheet" href="../static/css/booking.css" />
+</head>
+<body>
+    <!-- navbar start -->
+    <navbar>
+        <div class="nav-logo">
+            <h1>Manage<span>Studio</span></h1>
+        </div>
+        <div class="nav-links">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/#services">Services</a></li>
+                <li><a href="/#portfolio">Portfolio</a></li>
+                <li><a href="/#contact">Contact</a></li>
+            </ul>
+        </div>
+    </navbar>
+    <!-- navbar end -->
+
+    <section class="booking-section">
+        <div class="section-header">
+            <span class="subtitle">Our Photography Packages</span>
+            <h2>Choose Your <span class="highlight">Perfect Package</span></h2>
+        </div>
+        
+        <div class="pricing-container">
+            <div class="pricing-card">
+                <div class="pricing-header">
+                    <div class="package-icon">📸</div>
+                    <h3>Basic Portrait</h3>
+                    <div class="price">₹199</div>
+                    <p class="duration">1 Hour Session</p>
+                </div>
+                <div class="pricing-features">
+                    <ul>
+                        <li>Professional Photography</li>
+                        <li>2 Outfit Changes</li>
+                        <li>10 Edited Digital Photos</li>
+                        <li>Online Gallery Access</li>
+                        <li>Basic Retouching</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pricing-card featured">
+                <div class="featured-badge">Most Popular</div>
+                <div class="pricing-header">
+                    <div class="package-icon">👰</div>
+                    <h3>Wedding Package</h3>
+                    <div class="price">₹1499</div>
+                    <p class="duration">6 Hours Coverage</p>
+                </div>
+                <div class="pricing-features">
+                    <ul>
+                        <li>2 Professional Photographers</li>
+                        <li>200+ Edited Photos</li>
+                        <li>Premium Photo Album</li>
+                        <li>Online Gallery Access</li>
+                        <li>Advanced Retouching</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pricing-card">
+                <div class="pricing-header">
+                    <div class="package-icon">🎭</div>
+                    <h3>Fashion Portfolio</h3>
+                    <div class="price">₹599</div>
+                    <p class="duration">3 Hours Session</p>
+                </div>
+                <div class="pricing-features">
+                    <ul>
+                        <li>Studio Photography</li>
+                        <li>4 Outfit Changes</li>
+                        <li>30 Edited Photos</li>
+                        <li>Digital &amp; Print Delivery</li>
+                        <li>Professional Retouching</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="booking-form-section">
+            <div class="section-header">
+                <span class="subtitle">Book Your Session</span>
+                <h2>Schedule Your <span class="highlight">Photoshoot</span></h2>
+            </div>
+            
+            <div class="booking-container">
+                <div class="booking-form">
+                    <form id="bookingForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Full Name</label>
+                                <input type="text" id="name" placeholder="Enter your full name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" placeholder="Enter your email" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" placeholder="Enter your phone number" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="package">Select Package</label>
+                                <!-- In the form select options -->
+                                <select id="package" required>
+                                    <option value="">Choose your package</option>
+                                    <option value="basic">Basic Portrait Session (₹199)</option>
+                                    <option value="wedding">Wedding Photography (₹1499)</option>
+                                    <option value="fashion">Fashion Portfolio (₹599)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="date">Session Date</label>
+                                <input type="date" id="date" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="time">Preferred Time</label>
+                                <input type="time" id="time" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Special Requirements</label>
+                            <textarea id="message" placeholder="Tell us about any special requests or requirements"></textarea>
+                        </div>
+
+                        <button type="submit" class="submit-btn">
+                            <span>Book Your Session Now</span>
+                            <div class="btn-shine"></div>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="../static/js/main.js"></script>
+</body>
+</html>
