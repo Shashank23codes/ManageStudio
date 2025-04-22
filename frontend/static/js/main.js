@@ -62,10 +62,11 @@ filterButtons.forEach(button => {
 });
 
 // Contact form handling
-document.getElementById('contactForm').addEventListener('submit', function(e) {
-    e.preventDefault();
+// Contact Form Handler
+document.getElementById('contactForm').addEventListener('submit', async function(e) {
+    e.preventDefault(); // Prevent default form submission
     
-    // Get form values
+    // Get form data
     const formData = {
         name: document.getElementById('name').value,
         email: document.getElementById('email').value,
@@ -73,12 +74,69 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
         message: document.getElementById('message').value
     };
     
-    // Here you would typically send the data to your backend
-    console.log('Form submitted:', formData);
+    try {
+        const response = await fetch('/api/contact', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formData)
+        });
+        
+        const data = await response.json();
+        if (response.ok) {
+            alert(data.message);
+            this.reset(); // Reset form on success
+        } else {
+            alert('Error: ' + data.error);
+        }
+    } catch (error) {
+        alert('Error submitting form. Please try again.');
+        console.error('Error:', error);
+    }
+});
+
+// Booking form handling
+// Booking Form Handler
+// Ensure the DOM is fully loaded before attaching event listeners
+document.addEventListener('DOMContentLoaded', function() {
+    const bookingForm = document.getElementById('bookingForm');
     
-    // Clear form
-    this.reset();
-    
-    // Show success message (you can customize this)
-    alert('Thank you for your message! We will get back to you soon.');
+    if (bookingForm) {
+        bookingForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                package: document.getElementById('package').value,
+                date: document.getElementById('date').value,
+                time: document.getElementById('time').value,
+                message: document.getElementById('message').value
+            };
+            
+            try {
+                const response = await fetch('/api/booking', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(formData)
+                });
+                
+                const data = await response.json();
+                if (response.ok) {
+                    alert(data.message);
+                    this.reset();
+                } else {
+                    alert('Error: ' + data.error);
+                }
+            } catch (error) {
+                alert('Error submitting booking. Please try again.');
+                console.error('Error:', error);
+            }
+        });
+    }
 });

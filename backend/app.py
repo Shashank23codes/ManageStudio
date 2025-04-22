@@ -1,6 +1,7 @@
 from flask import Flask, render_template
 from pymongo import MongoClient
 from config.config import Config
+from routes.api import api
 
 app = Flask(__name__, 
             static_folder='../frontend/static',
@@ -10,6 +11,9 @@ app = Flask(__name__,
 client = MongoClient(Config.MONGO_URI)
 db = client[Config.DATABASE_NAME]
 app.debug = Config.DEBUG
+
+# Register the API blueprint
+app.register_blueprint(api)
 
 # Route for the homepage
 @app.route('/')
